@@ -8,20 +8,26 @@ import { AppComponent } from './app.component';
 import { RegisterComponent } from './register/register.component';
 import {  } from "./models/user.model";
 import { ViewComponent } from './view/view.component';
+import { NavComponent } from './nav/nav.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
     ViewComponent,
+    NavComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ZXingScannerModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
