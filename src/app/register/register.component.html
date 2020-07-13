@@ -1,1 +1,7 @@
+<form [formGroup]="cardDetails" (ngSubmit)="onSubmit()" *ngIf="!startScan">
+    <input type="text" formControlName="mundane_name" placeholder="Mundane Name">
+    <input type="text" formControlName="persona_name" placeholder="Persona Name">
+    <input type="text" formControlName="notes" placeholder="Notes">
+    <button type="submit" [disabled]="!cardDetails.valid">Login</button>
+</form>
 <zxing-scanner (scanSuccess)="completeScan($event)" *ngIf="startScan"></zxing-scanner>
