@@ -1,1 +1,4 @@
-<p>view works!</p>
+<zxing-scanner (scanSuccess)="completeScan($event)" *ngIf="startScan"></zxing-scanner>
+<p *ngIf="!startScan ">
+    {{userInfo?.mundane_name}}
+</p>
