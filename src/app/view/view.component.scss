@@ -2,6 +2,9 @@ zxing-scanner  {
     width: 100vw;
     object-fit: contain;
 }
+:host zxing-scanner::ng-deep video{
+    border-radius: 25px;
+}
 .scan-details {
     display: flex;
     flex-direction: column;

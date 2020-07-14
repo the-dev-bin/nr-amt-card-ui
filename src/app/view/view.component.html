@@ -1,6 +1,6 @@
 <div class="scan-details" *ngIf="startScan">
     <div>
-        Scan a card to see a person's details
+        View a user’s info by scanning their card!
     </div>
     <div class="scanner">
         <zxing-scanner (scanSuccess)="completeScan($event)" ></zxing-scanner>
@@ -14,6 +14,7 @@
             <span>Persona Name: {{userInfo.persona_name}}</span>
             <span>Age: {{userInfo.age}}</span>
             <span>Notes: {{userInfo.notes}}</span>
+            <button (click)="resetUser();">Scan again</button>
         </div>
         <div *ngIf="!userInfo" class="loading">
             Loading...

@@ -18,4 +18,8 @@ export class ViewComponent implements OnInit {
     this.userInfo = null;
     this.amtcardAPI.getUser(event).subscribe((user) => this.userInfo = user, (error)=> console.log(error), ()=> console.log(this.userInfo));
   }
+  public resetUser(){
+    this.startScan = true;
+    this.userInfo = null;
+  }
 }
