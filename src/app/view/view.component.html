@@ -1,4 +1,11 @@
 <zxing-scanner (scanSuccess)="completeScan($event)" *ngIf="startScan"></zxing-scanner>
-<p *ngIf="!startScan ">
-    {{userInfo?.mundane_name}}
-</p>
+<div *ngIf="!startScan">
+    <div *ngIf="userInfo" class="userInfo">
+        {{userInfo.mundane_name}}
+        {{userInfo.persona_name}}
+        {{userInfo.age}}
+    </div>
+    <div *ngIf="!userInfo" class="loading">
+        Loading...
+    </div>
+</div>

@@ -20,7 +20,7 @@ export class AmtcardAPIService {
   public editUser(cardID: string){
 
   }
-  public newUser(cardID: string, details: User): Observable<User>{
-    return this.httpService.post<User>("https://api.nr-amtcard.com/register_user", JSON.stringify(User));
+  public newUser(details: User): Observable<any>{
+    return this.httpService.post("https://api.nr-amtcard.com/register_user", details);
   }
 }
