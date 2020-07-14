@@ -8,13 +8,17 @@
 </div>
 
 <div class="scan-details" *ngIf="!startScan">
-    <div *ngIf="userInfo" class="userInfo">
-        <span>Mundane Name: {{userInfo.mundane_name}}</span>
-        <span>Persona Name: {{userInfo.persona_name}}</span>
-        <span>Age: {{userInfo.age}}</span>
-        <span>Notes: {{userInfo.notes}}</span>
+    <div class="user-card">
+        <div *ngIf="userInfo" class="user-info">
+            <span>Mundane Name: {{userInfo.mundane_name}}</span>
+            <span>Persona Name: {{userInfo.persona_name}}</span>
+            <span>Age: {{userInfo.age}}</span>
+            <span>Notes: {{userInfo.notes}}</span>
+        </div>
+        <div *ngIf="!userInfo" class="loading">
+            Loading...
+        </div>
     </div>
-    <div *ngIf="!userInfo" class="loading">
-        Loading...
-    </div>
+    
+    
 </div>
