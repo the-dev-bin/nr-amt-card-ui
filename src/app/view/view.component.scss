@@ -1,6 +1,5 @@
 zxing-scanner  {
-    max-height: 70px;
-    width: 25vw;
+    width: 100vw;
     object-fit: contain;
 }
 .scan-details {
@@ -8,7 +7,8 @@ zxing-scanner  {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 60vh;
+    height: 100vh;
+    width: 100vw;
     font-family: 'Roboto', sans-serif;
     
 }
@@ -21,8 +21,8 @@ zxing-scanner  {
 .user-card {
     background: #BEF8FD;
     border-radius: 20px;
-    width: 25vw;
-    height: 20vh;
+    width: 70vw;
+    height: 25vh;
     display: flex;
     flex-direction: column;
     align-items: center;
