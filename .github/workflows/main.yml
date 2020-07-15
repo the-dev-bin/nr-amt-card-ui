@@ -30,7 +30,7 @@ jobs:
     - name: npm install and npm run build
       run: |
         npm i
-        npm run build:prod
+        npm run build
       
     - name: deploy
       run: 	aws s3 sync ./dist/nr-amtcard-ui/ s3://nr-amtcard-website --delete
