@@ -1,0 +1,18 @@
+<div class="scanner" *ngIf="startScan">
+    <zxing-scanner (scanSuccess)="completeScan($event)" ></zxing-scanner>
+</div>
+
+<div class="scan-details" *ngIf="!startScan">
+    <div class="user-card">
+        <div *ngIf="userInfo" class="user-info">
+            <span>Mundane Name: {{userInfo.mundane_name}}</span>
+            <span>Persona Name: {{userInfo.persona_name}}</span>
+            <span>Age: {{userInfo.age}}</span>
+            <span>Notes: {{userInfo.notes}}</span>
+            <button (click)="resetUser();">Scan again</button>
+        </div>
+        <div *ngIf="!userInfo" class="loading">
+            Loading...
+        </div>
+    </div>    
+</div>

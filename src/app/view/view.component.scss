@@ -1,0 +1,26 @@
+zxing-scanner  {
+    width: 100vw;
+}
+:host zxing-scanner::ng-deep video{
+    height: 90vh;
+    width: 100vw;
+    object-fit: contain;
+
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.user-card {
+    background: #BEF8FD;
+    border-radius: 20px;
+    width: 70vw;
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

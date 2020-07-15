@@ -1,0 +1,20 @@
+.nav-container {
+    background: #627D98;
+    height: 10vh;
+    width: 100vw;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+a {
+    color: #D9E2EC;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+.is-active {
+    color: #54D1DB !important;
+}
