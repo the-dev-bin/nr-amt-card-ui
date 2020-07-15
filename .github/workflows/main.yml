@@ -22,7 +22,7 @@ jobs:
       run: npm install
         
     - name: build
-      run: ng build --prod
+      run: npm run build:prod
       
     - name: deploy
       run: 	aws s3 sync ./dist/nr-amtcard-ui/ s3://nr-amtcard-website --delete
