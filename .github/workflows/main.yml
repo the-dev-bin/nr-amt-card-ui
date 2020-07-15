@@ -23,6 +23,7 @@ jobs:
       
     - name: install angular and build
       run: |
+        npm update
         npm install -g @angular/cli > /dev/null
         ng build --prod
       
