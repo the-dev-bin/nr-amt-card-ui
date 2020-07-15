@@ -1,4 +1,4 @@
-<div class="scanner">
+<div class="scanner" *ngIf="startScan">
     <zxing-scanner (scanSuccess)="completeScan($event)" ></zxing-scanner>
 </div>
 
