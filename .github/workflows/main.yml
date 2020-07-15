@@ -19,9 +19,7 @@ jobs:
         aws-region: us-west-2
 
     - name: setup angular
-      run: |
-        npm install -g @angular/cli
-        npm install
+      run: npm install
         
     - name: build
       run: ng build --prod
