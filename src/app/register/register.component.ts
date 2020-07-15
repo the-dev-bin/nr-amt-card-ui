@@ -42,7 +42,8 @@ export class RegisterComponent implements OnInit {
   }
   public cancelScan(){
     this.startScan = false;
-    
+    this.cardDetails.reset();
+
   }
 
 }
