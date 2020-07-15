@@ -40,5 +40,9 @@ export class RegisterComponent implements OnInit {
   public onSubmit(){
     this.startScan = true;
   }
+  public cancelScan(){
+    this.startScan = false;
+    
+  }
 
 }
