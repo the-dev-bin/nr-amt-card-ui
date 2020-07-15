@@ -19,10 +19,12 @@ jobs:
         aws-region: us-west-2
 
     - name: setup angular
-      run: npm install
+      run: |
+        npm install @angular/cli
+        npm install
         
     - name: build
-      run: npm run build:prod
+      run: ng build --prod
       
     - name: deploy
       run: 	aws s3 sync ./dist/nr-amtcard-ui/ s3://nr-amtcard-website --delete
