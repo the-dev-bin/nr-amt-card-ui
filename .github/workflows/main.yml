@@ -28,5 +28,5 @@ jobs:
         ng build --prod
       
     - name: deploy
-      run: 	aws s3 sync ./dist/nr-amtcard-ui/ s3://nr-amtcard-website --delete
+      run: 	aws s3 sync ./dist/amtcard-ui/ s3://nr-amtcard-website --delete
       
