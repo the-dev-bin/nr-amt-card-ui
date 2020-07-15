@@ -7,24 +7,30 @@ on:
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v1
 
-    - name: Configure AWS Credentials
-      uses: aws-actions/configure-aws-credentials@v1
+    - name: Cache node modules
+      uses: actions/cache@v1
       with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: us-west-2
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
 
-    - name: setup angular
+    - name: Node ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: npm install and npm run build
       run: |
-        npm install @angular/cli
-        npm install
-        
-    - name: build
-      run: ng build --prod
+        npm i
+        npm run build:prod
       
     - name: deploy
       run: 	aws s3 sync ./dist/nr-amtcard-ui/ s3://nr-amtcard-website --delete
