@@ -13,6 +13,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+      
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-west-2
 
     - name: Cache node modules
       uses: actions/cache@v1
@@ -29,8 +36,8 @@ jobs:
 
     - name: npm install and npm run build
       run: |
-        npm i
-        npm run build
+        npm install -g @angular/cli > /dev/null
+        ng build --prod
       
     - name: deploy
       run: 	aws s3 sync ./dist/nr-amtcard-ui/ s3://nr-amtcard-website --delete
