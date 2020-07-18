@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { User } from "../models/user.model";
+import { Player } from "../models/player.model";
 import {HttpClient} from '@angular/common/http';
 import {map} from 'rxjs/operators';
 import {Observable, throwError } from 'rxjs';
@@ -12,15 +12,15 @@ export class AmtcardAPIService {
   constructor(private httpService: HttpClient) { }
 
 
-  public getUser(cardID: string): Observable<User>{
-    return this.httpService.get<User>(`https://api.nr-amtcard.com/get_user?card_id=${cardID}`).pipe(
-      map(data => new User().deserialize(data))
+  public getPlayer(cardID: string): Observable<Player>{
+    return this.httpService.get<Player>(`https://api.nr-amtcard.com/get_user?card_id=${cardID}`).pipe(
+      map(data => new Player().deserialize(data))
     );
   }
-  public editUser(cardID: string){
+  public editPlayer(cardID: string){
 
   }
-  public newUser(details: User): Observable<any>{
+  public newPlayer(details: Player): Observable<any>{
     return this.httpService.post("https://api.nr-amtcard.com/register_user", details);
   }
 }

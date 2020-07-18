@@ -1,6 +1,6 @@
 import {Deserializable} from './deserializable.model';
 
-export class User implements Deserializable{
+export class Player implements Deserializable{
     public card_id: string;
     public mundane_name: string;
     public persona_name: string;
