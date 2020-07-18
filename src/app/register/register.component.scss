@@ -28,6 +28,7 @@ button {
 }
 button:enabled {
     background: #52606D;
+    color: white;
 }
 :host zxing-scanner::ng-deep video{
     position: absolute;
