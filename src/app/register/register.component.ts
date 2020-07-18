@@ -18,7 +18,7 @@ export class RegisterComponent implements OnInit {
   cardDetails = new FormGroup({
     mundane_name: new FormControl('',[Validators.required]),
     persona_name: new FormControl('',[Validators.required]),
-    age: new FormControl(''),
+    age: new FormControl('', [Validators.required, Validators.min(1)]),
     notes: new FormControl('',[]),
   })
   constructor(public amtcardAPI: AmtcardAPIService) { }
