@@ -3,7 +3,7 @@ import { ViewChild } from '@angular/core';
 import { ZXingScannerComponent } from '@zxing/ngx-scanner';
 import { FormGroup, FormControl, Validators  } from '@angular/forms';
 import { AmtcardAPIService } from '../services/amtcard-api.service';
-import { User } from '../models/user.model';
+import { Player } from '../models/player.model';
 
 @Component({
   selector: 'app-register',
@@ -18,7 +18,7 @@ export class RegisterComponent implements OnInit {
   cardDetails = new FormGroup({
     mundane_name: new FormControl('',[Validators.required]),
     persona_name: new FormControl('',[Validators.required]),
-    age: new FormControl(''),
+    age: new FormControl('', [Validators.required, Validators.min(1)]),
     notes: new FormControl('',[]),
   })
   constructor(public amtcardAPI: AmtcardAPIService) { }
@@ -29,7 +29,7 @@ export class RegisterComponent implements OnInit {
   public completeScan(event){
     console.log(event);
     this.startScan = false;
-    this.amtcardAPI.newUser(new User().deserialize({
+    this.amtcardAPI.newPlayer(new Player().deserialize({
       "card_id": event,
       "mundane_name": this.cardDetails.value.mundane_name,
       "persona_name": this.cardDetails.value.persona_name,

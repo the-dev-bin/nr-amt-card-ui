@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AmtcardAPIService } from "../services/amtcard-api.service";
-import { User } from '../models/user.model';
+import { Player } from '../models/player.model';
 @Component({
   selector: 'app-view',
   templateUrl: './view.component.html',
@@ -9,17 +9,17 @@ import { User } from '../models/user.model';
 export class ViewComponent implements OnInit {
   public startScan: Boolean = true;
   constructor(public amtcardAPI: AmtcardAPIService) { }
-  public userInfo: User;
+  public playerInfo: Player;
   ngOnInit(): void {
   }
   public completeScan(event){
     console.log(event);
     this.startScan = false;
-    this.userInfo = null;
-    this.amtcardAPI.getUser(event).subscribe((user) => this.userInfo = user, (error)=> console.log(error), ()=> console.log(this.userInfo));
+    this.playerInfo = null;
+    this.amtcardAPI.getPlayer(event).subscribe((player) => this.playerInfo = player, (error)=> console.log(error), ()=> console.log(this.playerInfo));
   }
-  public resetUser(){
+  public resetPlayer(){
     this.startScan = true;
-    this.userInfo = null;
+    this.playerInfo = null;
   }
 }

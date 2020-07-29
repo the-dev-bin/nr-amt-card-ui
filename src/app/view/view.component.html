@@ -4,14 +4,14 @@
 
 <div class="scan-details" *ngIf="!startScan">
     <div class="user-card">
-        <div *ngIf="userInfo" class="user-info">
-            <span>Mundane Name: {{userInfo.mundane_name}}</span>
-            <span>Persona Name: {{userInfo.persona_name}}</span>
-            <span>Age: {{userInfo.age}}</span>
-            <span>Notes: {{userInfo.notes}}</span>
-            <button (click)="resetUser();">Scan again</button>
+        <div *ngIf="playerInfo" class="user-info">
+            <span>Mundane Name: {{playerInfo.mundane_name}}</span>
+            <span>Persona Name: {{playerInfo.persona_name}}</span>
+            <span>Age: {{playerInfo.age}}</span>
+            <span>Notes: {{playerInfo.notes}}</span>
+            <button (click)="resetPlayer();">Scan again</button>
         </div>
-        <div *ngIf="!userInfo" class="loading">
+        <div *ngIf="!playerInfo" class="loading">
             Loading...
         </div>
     </div>    

@@ -23,11 +23,12 @@ button {
     width: 90px;
     border-radius: 5px;
     background: #C2C2C2;
-    color: white;
+    color: #102A43;
     border: none;
 }
 button:enabled {
     background: #52606D;
+    color: white;
 }
 :host zxing-scanner::ng-deep video{
     position: absolute;
